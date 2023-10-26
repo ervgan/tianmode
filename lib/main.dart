@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tianmode/view/pages/home_page.dart';
 
 void main() => runApp(TianMode());
 
 class TianMode extends StatelessWidget {
-  const TianMode({Key key}) : super(key: key);
+  const TianMode({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
