@@ -9,8 +9,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("TianMode"),
       ),
-      body: Center(
-        child: Text("Hello world!"),
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return PostCard();
+        },
       ),
     );
   }
