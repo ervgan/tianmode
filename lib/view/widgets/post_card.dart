@@ -1,6 +1,8 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:tianmode/helper/demo_values.dart';
+import 'package:tianmode/view/presentation/themes.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard({Key? key}) : super(key: key);
@@ -44,8 +46,8 @@ class _PostTitleAndSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle titleTheme = Theme.of(context).textTheme.title;
-    final TextStyle summaryTheme = Theme.of(context).textTheme.body1;
+    final TextStyle? titleTheme = Theme.of(context).textTheme.titleLarge;
+    final TextStyle? summaryTheme = Theme.of(context).textTheme.bodyLarge;
     final String title = DemoValues.postTitle;
     final String summary = DemoValues.postSummary;
 
@@ -85,7 +87,7 @@ class _PostDetails extends StatelessWidget {
       children: <Widget>[
         _UserImage(),
         _UserNameAndEmail(),
-        //_PostTimeStamp(),
+        _PostTimeStamp(),
       ],
     );
   }
@@ -127,6 +129,19 @@ class _UserImage extends StatelessWidget {
       child: CircleAvatar(
         backgroundImage: AssetImage(DemoValues.userImage),
       ),
+    );
+  }
+}
+
+class _PostTimeStamp extends StatelessWidget {
+  const _PostTimeStamp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final TextStyle timeTheme = TextThemes.dateStyle;
+    return Expanded(
+      flex: 2,
+      child: Text(DemoValues.postTime, style: timeTheme),
     );
   }
 }

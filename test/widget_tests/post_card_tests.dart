@@ -30,5 +30,8 @@ void main() {
 
     // Test: Find text post summary
     expect(find.text(DemoValues.postSummary), findsOneWidget);
+
+    // Test: Find text post time
+    expect(find.text(DemoValues.postTime), findsOneWidget);
   });
 }
