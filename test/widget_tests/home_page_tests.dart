@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tianmode/view/pages/home_page.dart';
+import 'package:tianmode/view/widgets/post_card.dart';
 
 void main() {
   testWidgets("Testing HomePage widget", (WidgetTester tester) async {
     await tester.pumpWidget(MaterialApp(home: HomePage()));
 
-    // Test: Scaffold widget
+    // Test: Scaffold widget presence
     expect(find.byType(Scaffold), findsOneWidget);
 
-    // Test: AppBar widget
+    // Test: AppBar widget presence
     expect(find.byType(AppBar), findsOneWidget);
 
-    // Test: 2 Text widgets
-    expect(find.byType(Text), findsNWidgets(2));
+    // Test: "Leaf" text presence
+    expect(find.text("Tianmode"), findsOneWidget);
 
-    // Test: "Leaf" text
-    expect(find.text("TianMode"), findsOneWidget);
+    // Test: ListView presence
+    expect(find.byType(ListView), findsOneWidget);
 
-    // Test: "Hello world!" text
-    expect(find.text("Hello world!"), findsOneWidget);
+    // Test: PostCard presence
+    expect(find.byType(PostCard), findsWidgets);
   });
 }
