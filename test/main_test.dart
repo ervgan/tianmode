@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:tianmode/main.dart';
 import 'package:tianmode/view/pages/home_page.dart';
-import 'package:tianmode/main.dart';
 
 void main() {
   testWidgets("Testing TianMode widget", (WidgetTester tester) async {

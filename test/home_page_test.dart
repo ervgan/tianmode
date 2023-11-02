@@ -14,7 +14,7 @@ void main() {
     expect(find.byType(AppBar), findsOneWidget);
 
     // Test: "Leaf" text presence
-    expect(find.text("Tianmode"), findsOneWidget);
+    expect(find.text("TianMode"), findsOneWidget);
 
     // Test: ListView presence
     expect(find.byType(ListView), findsOneWidget);
